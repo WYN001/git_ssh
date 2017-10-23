@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!--告知struts运行时使用spring来创建对象  -->
+<!-- 	<constant name="struts.objectFactory" value="spring" /> -->
+<!-- 声明包 package 组织管理action name 标识 方便其他包引用 extends 继承struts-default -->
+	<!-- namespace="/sxt" 请求路径   默认值  "" / -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<package name="test1" extends="struts-default" >
+	<action name="index">
+	<result>/WEB-INF/jsp/add.jsp</result>
+	</action>
+	<action name="addAction" class="com.ssh.action.IndexAction" method="execute1">
+	<result name="success">/WEB-INF/jsp/message.jsp</result>
+	</action>	
+	<action name="list" class="com.ssh.action.IndexAction" method="execute2">
+	<result name="input">/WEB-INF/jsp/list.jsp</result>
+	</action>
+
+	</package>
+</struts>
